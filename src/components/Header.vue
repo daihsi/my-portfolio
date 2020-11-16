@@ -25,6 +25,7 @@
             text
             v-for="(item, index) in items"
             :key="index"
+            :to="item.url"
             class="d-none d-sm-flex"
           >
             <span>{{ item.title }}</span>
@@ -43,6 +44,7 @@
               <v-list-item
                 v-for="(item, index) in items"
                 :key="index"
+                :to="item.url"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
@@ -62,23 +64,23 @@ export default {
     items: [
       {
         title: "top",
-        href: "#",
+        url: "/",
       },
       {
         title: "about",
-        href: "#",
+        url: "/about",
       },
       {
         title: "works",
-        href: "#",
+        url: "/works",
       },
       {
         title: "skils",
-        href: "#",
+        url: "/skils",
       },
       {
         title: "contact",
-        href: "#",
+        url: "/contact",
       },
     ],
   }),
