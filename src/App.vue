@@ -14,14 +14,16 @@ import Footer from "./components/Footer.vue";
 
 export default {
   name: 'App',
-
   components: {
     Header,
     Footer
   },
-
   data: () => ({
     //
   }),
 };
 </script>
+
+<style lang="scss">
+@import "./css/app.scss";
+</style>
