@@ -1,12 +1,14 @@
 <template>
   <v-app>
     <v-container>
+      <!-- ページタイトル開始 -->
       <h2
         id="page-title"
         class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
       >
         {{ title }}
       </h2>
+      <!-- ページタイトル終了 -->
       <v-row>
         <!-- プロフィール画像のゾーン開始 -->
         <v-col
@@ -80,10 +82,12 @@
 export default {
   data: () => ({
     title: "about",
+    //プロフィール画像
     image: {
       url: require("../assets/profile_avatar.jpg"),
       alt: "プロフィール画像"
     },
+    //プロフィール画像横の自分の情報
     items: [
       {
         title: "名前",
@@ -102,14 +106,17 @@ export default {
         content: "ソフトボール / 読書 / サーフィン"
       }
     ],
+    //自己紹介
     selfIntroductions: [
       {
+        //一段目
         content: `一貫して建設業界に携わり、高速道路補修工事や個人宅に関する工事など、幅広く工事に従事。
 資格取得等も行い、積極的に技術研鑽に取り組んできました。施工管理でチームマネジメントやチームリーダーも経験。
 技術研修会を主導したり、管理データの効率化などを行い管理体制の構築など、チームの底上げを行いました。
 結果工程の早期終了を継続的に実現、発注者から工事成績を評価いただき他事務所への応援依頼を受けるなど、事業に貢献。`
       },
       {
+        //二段目
         content: `前職で怪我を負い、完治はしたが現場復帰は難しく、直接自分の手でモノづくりへ携われない悔しさを抱えて別業務を担当。
 その中で、ITツールを活用した緊急事案に対応する体制構築、管理データの効率化を行い、IT技術による当たり前のことが変化していくこと、可能性に感銘を受ける。
 自らの手でモノづくりを行い人や社会に価値提供し貢献したいという想いは、現場を退いてからも強くあり、今度は技術でシステムなどのモノづくりを手掛ける、エンジニアに興味が湧くように。
@@ -117,6 +124,7 @@ export default {
 大学内でJavaScriptやPHPに触れ、ますます技術向上の意欲や当たり前を変えるITの可能性を再認識し、エンジニアへの転職を決意。`
       },
       {
+        //三段目
         content: `PHP/Laravelでオリジナルwebアプリケーションを作成し、現在就職活動中。
 就職活動と並行でVueを勉強し、アウトプットとして自己紹介用のポートフォリオサイト作成。`
       }
@@ -126,6 +134,7 @@ export default {
 </script>
 
 <style scoped>
+  /* プロフィール画像 */
   .avatar {
     border-radius: 50%;
     box-shadow: 0 0 5px grey;
@@ -133,6 +142,7 @@ export default {
     max-height: 250px;
     text-align: center;
   }
+  /* 自己紹介 */
   .self-introduction {
     white-space: pre-wrap;
     word-wrap: break-word;
