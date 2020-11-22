@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
+    "firebase": "^8.1.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9",
     "vuetify": "^2.2.11"
