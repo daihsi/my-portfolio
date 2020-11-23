@@ -1,15 +1,14 @@
 <template>
   <v-footer
-    absolute
-    padless
+    class="mt-10"
     color="transparent"
   >
     <v-col
       flat
-      class="text-center"
+      class="text-center footer-text"
       cols="12"
     >
-      {{ date }} - <strong>Daishi Motoyama</strong> 
+      {{ date }} - <span>Motoyama Daishi</span> 
     </v-col>
   </v-footer>
 </template>
@@ -22,3 +21,10 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+  /* フッターテキスト */
+  .footer-text {
+    font-family: 'Lato', 'Noto Sans JP', sans-serif;
+  }
+</style>
