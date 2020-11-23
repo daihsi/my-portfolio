@@ -27,7 +27,7 @@ ${data.name}
 ${data.email}
 
 内容：
-${data.contents}
+${data.content}
 `;
 }
 
