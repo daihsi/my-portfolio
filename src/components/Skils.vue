@@ -1,11 +1,13 @@
 <template>
   <v-container>
+    <!-- ページタイトル開始 -->
     <h2
       id="page-title"
       class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
     >
       {{ title }}
     </h2>
+    <!-- ページタイトル終了 -->
     <!-- larnguagesのゾーン開始 -->
     <h3 
       class="skils-sub-title animate__animated animate__fadeIn"
@@ -108,8 +110,11 @@
 <script>
 export default {
   data: () => ({
+    //ページタイトル
     title: "skils",
+    //スキルの各タイトル
     skilsTitle: ["languages", "frameworks", "others"],
+    //言語のオブジェト
     languages: [
       { 
         prefix: "fas",
@@ -130,6 +135,7 @@ export default {
         class: "php-color"
       }
     ],
+    //フレームワークのオブジェト
     frameworks: [
       {
         prefix: "fab",
@@ -150,6 +156,7 @@ export default {
         class: "bootstrap-color"
       }
     ],
+    //そのほか(インフラなど)のオブジェト
     others: [
       {
         prefix: "fab",
@@ -175,40 +182,51 @@ export default {
 </script>
 
 <style scoped>
+  /* スキルタイトル */
   .skils-sub-title {
     font-weight: 300;
     font-size: 20px;
     text-align: center;
   }
+  /* 各スキルのサイズ */
   .skils-page-icon {
     font-size: 6rem;
   }
+  /* 各スキルの名前 */
   .skils-name {
     text-align: center;
     color: grey;
     font-weight: 300;
   }
+  /* HTML,CSS */
   .tag-color {
     color: #e44d26;
   }
+  /* JavaScript */
   .javascript-color {
     color: #f0db48;
   }
+  /* PHP */
   .php-color {
     color: #787cb4;
   }
+  /* Laravel */
   .laravel-color {
     color: #f4645f;
   }
+  /* Vue.js */
   .vuejs-color {
     color: #4fc08d;
   }
+  /* Bootstrap */
   .bootstrap-color {
     color: #7952b3;
   }
+  /* AWS */
   .aws-color {
     color: #242F3E;
   }
+  /* git */
   .git-color {
     color: #f14e32;
   }

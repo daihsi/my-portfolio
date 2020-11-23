@@ -1,22 +1,17 @@
 <template>
   <v-container>
-    <v-row
-      class="text-center mt-5 mb-10"
+    <!-- ページタイトル開始 -->
+    <h2
+      id="page-title"
+      class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
     >
-      <v-col
-        cols="12"
-      >
-        <h2
-          id="page-title"
-          class="animate__animated animate__slideInUp"
-        >
-          {{ title }}
-        </h2>
-      </v-col>
-    </v-row>
+      {{ title }}
+    </h2>
+    <!-- ページタイトル終了 -->
     <v-row
       class="d-flex justify-center"
     >
+      <!-- 制作作品表示開始 -->
       <v-col
         v-for="(item, index) in items"
         :key="index"
@@ -24,16 +19,19 @@
         lg="6"
         class="mb-10 animate__animated animate__fadeIn"
       >
+        <!-- 作品カード開始 -->
         <v-hover v-slot:default="{ hover }">
           <v-card
             class="mx-auto"
             color="grey lighten-4"
             max-width="500"
           >
+            <!-- 作品のイメージ画像開始 -->
             <v-img
               :aspect-ratio="16/9"
               :src="item.image"
             >
+              <!-- ホバー時の作品説明分開始 -->
               <v-expand-transition>
                 <div
                   v-if="hover"
@@ -47,10 +45,14 @@
                   </p>
                 </div>
               </v-expand-transition>
+              <!-- ホバー時の作品説明分終了 -->
+            <!-- 作品のイメージ画像終了 -->
             </v-img>
+            <!-- カードテキスト開始 -->
             <v-card-text
               style="position: relative;"
             >
+              <!-- githubのアイコンボタン開始 -->
               <v-btn
                 absolute
                 color="green"
@@ -66,26 +68,36 @@
                   :icon="['fab', 'github']" 
                 />
               </v-btn>
+              <!-- githubのアイコンボタン終了 -->
+              <!-- 主要技術テキスト開始 -->
               <div
                 class="font-weight-light grey--text title mb-2"
               >
                 {{ item.useTech }}
               </div>
+              <!-- 主要技術テキスト終了 -->
+              <!-- 作品タイトル開始 -->
               <h3
                 class="display-1 font-weight-light green--text mb-2"
               >
                 {{ item.title }}
               </h3>
+              <!-- 作品タイトル終了 -->
+              <!-- 作品URL開始 -->
               <a
                 class="font-weight-light title mb-2" 
                 :href="item.appUrl"
               >
                 {{ item.appUrl }}
               </a>
+              <!-- 作品URL終了 -->
             </v-card-text>
+            <!-- カードテキスト終了 -->
           </v-card>
         </v-hover>
+        <!-- 作品カード終了 -->
       </v-col>
+      <!-- 制作作品表示終了 -->
     </v-row>
   </v-container>
 </template>
@@ -93,6 +105,7 @@
 <script>
 export default {
   data: () => ({
+    //ページタイトル
     title: "works",
     items: [
       //オリジナルアプリケーションの情報
@@ -118,7 +131,7 @@ Firebaseでホスティングされており、functionを利用したメール�
 今回得た知見を元に、次回はLaravel+Vue.jsとさらなるスキルアップをすべく、Dockerも取り入れたアプリケーションを開発する予定です。`,
         appUrl: "#",
         githubUrl: "https://github.com/daihsi/my-portfolio",
-        title: "My portfolio",
+        title: "Moda ~ my portfolio ~",
         useTech: "Vue.js + Vuetify + Firebase"
       },
     ]

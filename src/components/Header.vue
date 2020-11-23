@@ -4,12 +4,14 @@
       <v-col
         cols="12"
       >
+        <!-- ヘッダーナビゲーションの開始 -->
         <v-app-bar
           flat
           color="transparent"
           prominent
           class="header-nav mx-auto"
         >
+          <!-- ヘッダータイトル開始 -->
           <v-toolbar-title>
             <img
               :src="logo" 
@@ -17,7 +19,10 @@
               class="header-nav-logo"
             />
           </v-toolbar-title>
+          <!-- ヘッダータイトル終了 -->
           <v-spacer></v-spacer>
+          <!-- SNSリンクボタン開始 -->
+          <!-- Twitter -->
           <v-btn
             icon
             :href="twitterUrl"
@@ -27,6 +32,7 @@
               :icon="['fab', 'twitter']"
             />
           </v-btn>
+          <!-- Wantedly -->
           <v-btn
             icon
             :href="wantedlyUrl"
@@ -37,9 +43,12 @@
               :alt="wantedlyAlt"
             />
           </v-btn>
+          <!-- SNSリンクボタン終了 -->
+          <!-- ナビゲーションタブメニュー開始 -->
           <template
             v-slot:extension
           >
+            <!-- タブ開始 w600px以下で消去 -->
             <v-tabs
               right
               class="header-nav-tabs"
@@ -54,6 +63,8 @@
                 {{ item.title }}
               </v-tab>
             </v-tabs>
+            <!-- タブ終了 -->
+            <!-- メニュー非表示開始 w600px以上で消去 -->
             <v-menu
               bottom
               origin="center center"
@@ -79,8 +90,11 @@
                 </v-list-item>
               </v-list>
             </v-menu>
+            <!-- メニュー非表示終了 w600px以上で消去 -->
           </template>
+          <!-- ナビゲーションタブメニュー終了 -->
         </v-app-bar>
+        <!-- ヘッダーナビゲーションの終了 -->
       </v-col>
     </v-row>
   </v-container>
