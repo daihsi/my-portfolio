@@ -70,22 +70,22 @@
               </v-btn>
               <!-- githubのアイコンボタン終了 -->
               <!-- 主要技術テキスト開始 -->
-              <div
-                class="font-weight-light grey--text title mb-2"
+              <h4
+                class="work-technology font-weight-light grey--text mb-3"
               >
                 {{ item.useTech }}
-              </div>
+              </h4>
               <!-- 主要技術テキスト終了 -->
               <!-- 作品タイトル開始 -->
               <h3
-                class="display-1 font-weight-light green--text mb-2"
+                class="work-title font-weight-light green--text mb-3"
               >
                 {{ item.title }}
               </h3>
               <!-- 作品タイトル終了 -->
               <!-- 作品URL開始 -->
               <a
-                class="font-weight-light title mb-2" 
+                class="work-anker font-weight-light mb-3" 
                 :href="item.appUrl"
               >
                 {{ item.appUrl }}
@@ -110,7 +110,7 @@ export default {
     items: [
       //オリジナルアプリケーションの情報
       {
-        image: require("../assets/works_nikomal_top.png"),
+        image: require("../assets/nikomal_image.png"),
         description: `nikomalは、動物の笑顔を投稿共有し、癒しの場・動物の魅力の再発見などできるアプリケーションです。
 いいね登録などをAjax通信にて非同期で行ったり、投稿一覧の自動スクロール読み込みなど、ユーザーの使いやすさに寄与したUIを意識して作成しました。
 またその点を、コンテストの審査員であるエンジニアの方に評価いただき、賞を獲得しました。
@@ -123,7 +123,7 @@ GitHubに詳細がございますので、是非ご覧ください。`,
       },
       //ポートフォリオサイトの情報
       {
-        image: require("../assets/fake_image.jpg"),
+        image: require("../assets/moda_portfolio_image.png"),
         description: `現在ご覧いただいているサイトになります。
 「フロントエンドにはVue or Reactを用いる」という昨今のトレンドにキャッチアップするためと、
 実務ではフロントエンド言語の知識も必要と感じ、転職活動と並行しSPAのポートフォリオサイトを作成しました
@@ -188,5 +188,13 @@ Firebaseでホスティングされており、functionを利用したメール�
       font-size: 0.8rem;
       line-height: 0.9rem;
     }
+  }
+  /* カード内の作品タイトル */
+  .work-title {
+    font-size: 24px;
+  }
+  /* カード内の使用技術とURL */
+  .work-technology, .work-anker {
+    font-size: 13px;
   }
 </style>
