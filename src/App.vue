@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <Header></Header>
-    <v-main>
-      <router-view></router-view>
-    </v-main>
+    <router-view></router-view>
     <Footer></Footer>
   </v-app>
 </template>
@@ -18,10 +16,7 @@ export default {
     Header,
     Footer
   },
-  data: () => ({
-    //
-  }),
-};
+}
 </script>
 
 <style lang="scss">
