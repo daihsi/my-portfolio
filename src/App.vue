@@ -1,8 +1,14 @@
 <template>
   <v-app>
+    <!-- ヘッダー開始 -->
     <Header></Header>
+    <!-- ヘッダー終了 -->
+    <!-- メインコンテンツ開始 -->
     <router-view></router-view>
+    <!-- メインコンテンツ終了 -->
+    <!-- フッター開始 -->
     <Footer></Footer>
+    <!-- フッター終了 -->
   </v-app>
 </template>
 
@@ -13,7 +19,9 @@ import Footer from "./components/Footer.vue";
 export default {
   name: 'App',
   components: {
+    //ヘッダーコンポーネント
     Header,
+    //フッターコンポーネント
     Footer
   },
 }

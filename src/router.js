@@ -1,5 +1,8 @@
+//vue
 import Vue from "vue";
+//Vueルーティング
 import Router from "vue-router";
+//各ページのコンポーネント
 import TopPage from "./components/TopPage.vue";
 import About from "./components/About.vue";
 import Contact from "./components/Contact.vue";

@@ -1,81 +1,76 @@
 <template>
-  <v-app>
-    <v-container>
-      <!-- ページタイトル開始 -->
-      <h2
-        id="page-title"
-        class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
+  <v-container>
+    <!-- ページタイトル開始 -->
+    <h2
+      id="page-title"
+      class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
+    >
+      {{ title }}
+    </h2>
+    <!-- ページタイトル終了 -->
+    <v-row>
+      <!-- プロフィール画像のゾーン開始 -->
+      <v-col
+        cols="12"
+        sm="6"
+        class="d-flex justify-sm-end justify-center pr-md-10 pr-sm-5"
       >
-        {{ title }}
-      </h2>
-      <!-- ページタイトル終了 -->
-      <v-row>
-        <!-- プロフィール画像のゾーン開始 -->
-        <v-col
-          cols="12"
-          sm="6"
-          class="d-flex justify-sm-end justify-center pr-md-10 pr-sm-5"
+        <v-img
+          :src="image.url"
+          :alt="image.alt"
+          class="avatar animate__animated animate__slideInLeft"
         >
-          <v-img
-            :src="image.url"
-            :alt="image.alt"
-            class="avatar animate__animated animate__slideInLeft"
-          >
-          </v-img>
-        </v-col>
-        <!-- プロフィール画像のゾーン終了 -->
-        <!-- プロフィールのゾーン開始 -->
-        <v-col
-          cols="12"
-          sm="6"
-          class="d-flex justify-sm-start justify-center align-center pl-md-5"
-        >
-          <v-simple-table
-            class="animate__animated animate__slideInRight"
-          >
-            <template v-slot:default> 
-              <tbody>
-                <tr
-                  v-for="(item, index) in items"
-                  :key="index"
-                >
-                  <td>{{ item.title }}</td>
-                  <td>{{ item.content }}</td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
-        </v-col>
-        <!-- プロフィール画像のゾーン終了 -->
-      </v-row>
-      <!-- 自己紹介のゾーン開始 -->
-      <v-row
-        class="d-flex justify-center mt-5"
+        </v-img>
+      </v-col>
+      <!-- プロフィール画像のゾーン終了 -->
+      <!-- プロフィールのゾーン開始 -->
+      <v-col
+        cols="12"
+        sm="6"
+        class="d-flex justify-sm-start justify-center align-center pl-md-5"
       >
-        <v-col
-          cols="12"
-          sm="10"
+        <v-simple-table
+          class="animate__animated animate__slideInRight"
         >
-          <p
-            class="self-introduction animate__animated animate__fadeInUp"
-          >
-            {{ selfIntroductions[0].content }}
-          </p>
-          <p
-            class="self-introduction animate__animated animate__fadeInUp"
-          >
-            {{ selfIntroductions[1].content }}
-          </p>
-          <p
-            class="self-introduction animate__animated animate__fadeInUp mb-10"
-          >
-            {{ selfIntroductions[2].content }}
-          </p>
-        </v-col>
-      </v-row>
-      <!-- 自己紹介のゾーン終了 -->
-    </v-container>
-  </v-app>
+          <template v-slot:default> 
+            <tbody>
+              <tr
+                v-for="(item, index) in items"
+                :key="index"
+              >
+                <td>{{ item.title }}</td>
+                <td>{{ item.content }}</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+      </v-col>
+      <!-- プロフィール画像のゾーン終了 -->
+    </v-row>
+    <!-- 自己紹介のゾーン開始 -->
+    <v-layout
+      class="d-flex justify-center mt-5"
+    >
+      <div>
+        <p
+          class="self-introduction animate__animated animate__fadeInUp"
+        >
+          {{ selfIntroductions[0].content }}
+        </p>
+        <p
+          class="self-introduction animate__animated animate__fadeInUp"
+        >
+          {{ selfIntroductions[1].content }}
+        </p>
+        <p
+          class="self-introduction animate__animated animate__fadeInUp"
+        >
+          {{ selfIntroductions[2].content }}
+        </p>
+      </div>
+    </v-layout>
+    <!-- 自己紹介のゾーン終了 -->
+  </v-container>
 </template>
 
 <script>
@@ -118,8 +113,10 @@ export default {
       {
         //二段目
         content: `前職で怪我を負い、完治はしたが現場復帰は難しく、直接自分の手でモノづくりへ携われない悔しさを抱えて別業務を担当。
-その中で、ITツールを活用した緊急事案に対応する体制構築、管理データの効率化を行い、IT技術による当たり前のことが変化していくこと、可能性に感銘を受ける。
-自らの手でモノづくりを行い人や社会に価値提供し貢献したいという想いは、現場を退いてからも強くあり、今度は技術でシステムなどのモノづくりを手掛ける、エンジニアに興味が湧くように。
+その中で、ITツールを活用した緊急事案に対応する体制構築、管理データの効率化を行いました。
+IT技術による当たり前のことが変化していくこと、可能性に感銘を受ける。
+自らの手でモノづくりを行い人や社会に価値提供し貢献したいという想いは、現場を退いてからも強くありました。
+今度は技術でシステムなどのモノづくりを手掛ける、エンジニアに興味が湧くように。
 もっとITに詳しくなりたいと思い、サイバー大学に入学。(現在第2学年)
 大学内でJavaScriptやPHPに触れ、ますます技術向上の意欲や当たり前を変えるITの可能性を再認識し、エンジニアへの転職を決意。`
       },
