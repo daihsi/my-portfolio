@@ -12,7 +12,7 @@ const mailTransport = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: gmailEmail,
-    password: gmailPassword
+    pass: gmailPassword
   }
 });
 
@@ -27,7 +27,7 @@ ${data.name}
 ${data.email}
 
 内容：
-${data.contents}
+${data.content}
 `;
 }
 
