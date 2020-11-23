@@ -129,7 +129,7 @@ GitHubに詳細がございますので、是非ご覧ください。`,
 実務ではフロントエンド言語の知識も必要と感じ、転職活動と並行しSPAのポートフォリオサイトを作成しました
 Firebaseでホスティングされており、functionを利用したメール送信機能も実装されております。
 今回得た知見を元に、次回はLaravel+Vue.jsとさらなるスキルアップをすべく、Dockerも取り入れたアプリケーションを開発する予定です。`,
-        appUrl: "#",
+        appUrl: "https://moda-portfolio.web.app",
         githubUrl: "https://github.com/daihsi/my-portfolio",
         title: "Moda ~ my portfolio ~",
         useTech: "Vue.js + Vuetify + Firebase"
