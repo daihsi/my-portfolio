@@ -1,110 +1,108 @@
 <template>
-  <v-app>
-    <v-container>
-      <h2
-        id="page-title"
-        class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
+  <v-container>
+    <h2
+      id="page-title"
+      class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
+    >
+      {{ title }}
+    </h2>
+    <!-- larnguagesのゾーン開始 -->
+    <h3 
+      class="skils-sub-title animate__animated animate__fadeIn"
+    >
+      {{ skilsTitle[0] }}
+    </h3>
+    <v-row
+      class="mt-5"
+    >
+      <v-col
+        clos="4"
+        v-for="(language, index) in languages"
+        :key="index"
+        class="d-flex justify-center"
       >
-        {{ title }}
-      </h2>
-      <!-- larnguagesのゾーン開始 -->
-      <h3 
-        class="skils-sub-title animate__animated animate__fadeIn"
-      >
-        {{ skilsTitle[0] }}
-      </h3>
-      <v-row
-        class="mt-5"
-      >
-        <v-col
-          clos="4"
-          v-for="(language, index) in languages"
-          :key="index"
-          class="d-flex justify-center"
+        <div 
+          class="d-flex flex-column"
         >
-          <div 
-            class="d-flex flex-column"
+          <v-fa
+            class="skils-page-icon animate__animated animate__slideInLeft"
+            :class="language.class"
+            :icon="[language.prefix, language.iconName]" 
+          />
+          <span
+            class="skils-name mt-2 mb-5 animate__animated animate__fadeIn"
           >
-            <v-fa
-              class="skils-page-icon animate__animated animate__slideInLeft"
-              :class="language.class"
-              :icon="[language.prefix, language.iconName]" 
-            />
-            <span
-              class="skils-name mt-2 mb-5 animate__animated animate__fadeIn"
-            >
-              {{ language.name }}
-            </span>
-          </div>
-        </v-col>
-      </v-row>
-      <!-- larnguagesのゾーン終了 -->
-      <!-- frameworksのゾーン開始 -->
-      <h3 
-        class="skils-sub-title animate__animated animate__fadeIn"
+            {{ language.name }}
+          </span>
+        </div>
+      </v-col>
+    </v-row>
+    <!-- larnguagesのゾーン終了 -->
+    <!-- frameworksのゾーン開始 -->
+    <h3 
+      class="skils-sub-title animate__animated animate__fadeIn"
+    >
+      {{ skilsTitle[1] }}
+    </h3>
+    <v-row
+      class="mt-5"
+    >
+      <v-col
+        clos="4"
+        v-for="(framework, index) in frameworks"
+        :key="index"
+        class="d-flex justify-center"
       >
-        {{ skilsTitle[1] }}
-      </h3>
-      <v-row
-        class="mt-5"
-      >
-        <v-col
-          clos="4"
-          v-for="(framework, index) in frameworks"
-          :key="index"
-          class="d-flex justify-center"
+        <div 
+          class="d-flex flex-column"
         >
-          <div 
-            class="d-flex flex-column"
+          <v-fa
+            class="skils-page-icon animate__animated animate__slideInRight"
+            :class="framework.class"
+            :icon="[framework.prefix, framework.iconName]" 
+          />
+          <span
+            class="skils-name mt-2 mb-5 animate__animated animate__fadeIn"
           >
-            <v-fa
-              class="skils-page-icon animate__animated animate__slideInRight"
-              :class="framework.class"
-              :icon="[framework.prefix, framework.iconName]" 
-            />
-            <span
-              class="skils-name mt-2 mb-5 animate__animated animate__fadeIn"
-            >
-              {{ framework.name }}
-            </span>
-          </div>
-        </v-col>
-      </v-row>
-      <!-- frameworksのゾーン終了 -->
-      <!-- othersのゾーン開始 -->
-      <h3 
-        class="skils-sub-title animate__animated animate__fadeIn"
+            {{ framework.name }}
+          </span>
+        </div>
+      </v-col>
+    </v-row>
+    <!-- frameworksのゾーン終了 -->
+    <!-- othersのゾーン開始 -->
+    <h3 
+      class="skils-sub-title animate__animated animate__fadeIn"
+    >
+      {{ skilsTitle[2] }}
+    </h3>
+    <v-row
+      class="mt-5"
+    >
+      <v-col
+        clos="4"
+        v-for="(other, index) in others"
+        :key="index"
+        class="d-flex justify-center"
       >
-        {{ skilsTitle[2] }}
-      </h3>
-      <v-row
-        class="mt-5"
-      >
-        <v-col
-          clos="4"
-          v-for="(other, index) in others"
-          :key="index"
-          class="d-flex justify-center"
+        <div 
+          class="d-flex flex-column"
         >
-          <div 
-            class="d-flex flex-column"
+          <v-fa
+            class="skils-page-icon animate__animated animate__slideInLeft"
+            :class="other.class"
+            :icon="[other.prefix, other.iconName]" 
+          />
+          <span
+            class="skils-name mt-2 animate__animated animate__fadeIn"
           >
-            <v-fa
-              class="skils-page-icon animate__animated animate__slideInLeft"
-              :class="other.class"
-              :icon="[other.prefix, other.iconName]" 
-            />
-            <span
-              class="skils-name mt-2 mb-10 animate__animated animate__fadeIn"
-            >
-              {{ other.name }}
-            </span>
-          </div>
-        </v-col>
-      </v-row>
-      <!-- othersのゾーン終了 -->
-    </v-container>
-  </v-app>
+            {{ other.name }}
+          </span>
+        </div>
+      </v-col>
+    </v-row>
+    <!-- othersのゾーン終了 -->
+  </v-container>
 </template>
 
 <script>
@@ -210,9 +208,6 @@ export default {
   }
   .aws-color {
     color: #242F3E;
-  }
-  .circleci-color {
-    /* */
   }
   .git-color {
     color: #f14e32;

@@ -1,8 +1,7 @@
 <template>
-  <v-app>
-    <div 
-      class="mt-5 top-container-wrap"
-    >
+  <div 
+    class="mt-5 top-container-wrap"
+  >
     <v-container>
       <v-row
         class="d-flex justify-center"
@@ -62,8 +61,7 @@
         <!-- トップページ見出し画像のラップ終了 -->
       </v-row>
     </v-container>
-    </div>
-  </v-app>
+  </div>
 </template>
 
 <script>

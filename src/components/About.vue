@@ -1,81 +1,79 @@
 <template>
-  <v-app>
-    <v-container>
-      <!-- ページタイトル開始 -->
-      <h2
-        id="page-title"
-        class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
+  <v-container>
+    <!-- ページタイトル開始 -->
+    <h2
+      id="page-title"
+      class="text-center mt-5 mb-10 animate__animated animate__slideInUp"
+    >
+      {{ title }}
+    </h2>
+    <!-- ページタイトル終了 -->
+    <v-row>
+      <!-- プロフィール画像のゾーン開始 -->
+      <v-col
+        cols="12"
+        sm="6"
+        class="d-flex justify-sm-end justify-center pr-md-10 pr-sm-5"
       >
-        {{ title }}
-      </h2>
-      <!-- ページタイトル終了 -->
-      <v-row>
-        <!-- プロフィール画像のゾーン開始 -->
-        <v-col
-          cols="12"
-          sm="6"
-          class="d-flex justify-sm-end justify-center pr-md-10 pr-sm-5"
+        <v-img
+          :src="image.url"
+          :alt="image.alt"
+          class="avatar animate__animated animate__slideInLeft"
         >
-          <v-img
-            :src="image.url"
-            :alt="image.alt"
-            class="avatar animate__animated animate__slideInLeft"
-          >
-          </v-img>
-        </v-col>
-        <!-- プロフィール画像のゾーン終了 -->
-        <!-- プロフィールのゾーン開始 -->
-        <v-col
-          cols="12"
-          sm="6"
-          class="d-flex justify-sm-start justify-center align-center pl-md-5"
-        >
-          <v-simple-table
-            class="animate__animated animate__slideInRight"
-          >
-            <template v-slot:default> 
-              <tbody>
-                <tr
-                  v-for="(item, index) in items"
-                  :key="index"
-                >
-                  <td>{{ item.title }}</td>
-                  <td>{{ item.content }}</td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
-        </v-col>
-        <!-- プロフィール画像のゾーン終了 -->
-      </v-row>
-      <!-- 自己紹介のゾーン開始 -->
-      <v-row
-        class="d-flex justify-center mt-5"
+        </v-img>
+      </v-col>
+      <!-- プロフィール画像のゾーン終了 -->
+      <!-- プロフィールのゾーン開始 -->
+      <v-col
+        cols="12"
+        sm="6"
+        class="d-flex justify-sm-start justify-center align-center pl-md-5"
       >
-        <v-col
-          cols="12"
-          sm="10"
+        <v-simple-table
+          class="animate__animated animate__slideInRight"
         >
-          <p
-            class="self-introduction animate__animated animate__fadeInUp"
-          >
-            {{ selfIntroductions[0].content }}
-          </p>
-          <p
-            class="self-introduction animate__animated animate__fadeInUp"
-          >
-            {{ selfIntroductions[1].content }}
-          </p>
-          <p
-            class="self-introduction animate__animated animate__fadeInUp mb-10"
-          >
-            {{ selfIntroductions[2].content }}
-          </p>
-        </v-col>
-      </v-row>
-      <!-- 自己紹介のゾーン終了 -->
-    </v-container>
-  </v-app>
+          <template v-slot:default> 
+            <tbody>
+              <tr
+                v-for="(item, index) in items"
+                :key="index"
+              >
+                <td>{{ item.title }}</td>
+                <td>{{ item.content }}</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+      </v-col>
+      <!-- プロフィール画像のゾーン終了 -->
+    </v-row>
+    <!-- 自己紹介のゾーン開始 -->
+    <v-row
+      class="d-flex justify-center mt-5"
+    >
+      <v-col
+        cols="12"
+        sm="10"
+      >
+        <p
+          class="self-introduction animate__animated animate__fadeInUp"
+        >
+          {{ selfIntroductions[0].content }}
+        </p>
+        <p
+          class="self-introduction animate__animated animate__fadeInUp"
+        >
+          {{ selfIntroductions[1].content }}
+        </p>
+        <p
+          class="self-introduction animate__animated animate__fadeInUp"
+        >
+          {{ selfIntroductions[2].content }}
+        </p>
+      </v-col>
+    </v-row>
+    <!-- 自己紹介のゾーン終了 -->
+  </v-container>
 </template>
 
 <script>

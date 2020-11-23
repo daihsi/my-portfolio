@@ -1,95 +1,93 @@
 <template>
-  <v-app>
-    <v-container>
-      <v-row
-        class="text-center mt-5 mb-10"
+  <v-container>
+    <v-row
+      class="text-center mt-5 mb-10"
+    >
+      <v-col
+        cols="12"
       >
-        <v-col
-          cols="12"
+        <h2
+          id="page-title"
+          class="animate__animated animate__slideInUp"
         >
-          <h2
-            id="page-title"
-            class="animate__animated animate__slideInUp"
+          {{ title }}
+        </h2>
+      </v-col>
+    </v-row>
+    <v-row
+      class="d-flex justify-center"
+    >
+      <v-col
+        v-for="(item, index) in items"
+        :key="index"
+        cols="12"
+        lg="6"
+        class="mb-10 animate__animated animate__fadeIn"
+      >
+        <v-hover v-slot:default="{ hover }">
+          <v-card
+            class="mx-auto"
+            color="grey lighten-4"
+            max-width="500"
           >
-            {{ title }}
-          </h2>
-        </v-col>
-      </v-row>
-      <v-row
-        class="d-flex justify-center"
-      >
-        <v-col
-          v-for="(item, index) in items"
-          :key="index"
-          cols="12"
-          lg="6"
-          class="mb-10 animate__animated animate__fadeIn"
-        >
-          <v-hover v-slot:default="{ hover }">
-            <v-card
-              class="mx-auto"
-              color="grey lighten-4"
-              max-width="500"
+            <v-img
+              :aspect-ratio="16/9"
+              :src="item.image"
             >
-              <v-img
-                :aspect-ratio="16/9"
-                :src="item.image"
-              >
-                <v-expand-transition>
-                  <div
-                    v-if="hover"
-                    class="transition-fast-in-fast-out 
-                          black darken-2 v-card--reveal 
-                          display-3 white--text pa-sm-5"
-                    style="height: 100%;"
-                  >
-                    <p class="skil-card-description">
-                      {{ item.description }}
-                    </p>
-                  </div>
-                </v-expand-transition>
-              </v-img>
-              <v-card-text
-                style="position: relative;"
-              >
-                <v-btn
-                  absolute
-                  color="green"
-                  class="white--text"
-                  fab
-                  large
-                  right
-                  top
-                  :href="item.githubUrl"
-                >
-                  <v-fa
-                    class="skil-icon-github"
-                    :icon="['fab', 'github']" 
-                  />
-                </v-btn>
+              <v-expand-transition>
                 <div
-                  class="font-weight-light grey--text title mb-2"
+                  v-if="hover"
+                  class="transition-fast-in-fast-out 
+                        black darken-2 v-card--reveal 
+                        display-3 white--text pa-sm-5"
+                  style="height: 100%;"
                 >
-                  {{ item.useTech }}
+                  <p class="skil-card-description">
+                    {{ item.description }}
+                  </p>
                 </div>
-                <h3
-                  class="display-1 font-weight-light green--text mb-2"
-                >
-                  {{ item.title }}
-                </h3>
-                <a
-                  class="font-weight-light title mb-2" 
-                  :href="item.appUrl"
-                >
-                  {{ item.appUrl }}
-                </a>
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-app>
+              </v-expand-transition>
+            </v-img>
+            <v-card-text
+              style="position: relative;"
+            >
+              <v-btn
+                absolute
+                color="green"
+                class="white--text"
+                fab
+                large
+                right
+                top
+                :href="item.githubUrl"
+              >
+                <v-fa
+                  class="skil-icon-github"
+                  :icon="['fab', 'github']" 
+                />
+              </v-btn>
+              <div
+                class="font-weight-light grey--text title mb-2"
+              >
+                {{ item.useTech }}
+              </div>
+              <h3
+                class="display-1 font-weight-light green--text mb-2"
+              >
+                {{ item.title }}
+              </h3>
+              <a
+                class="font-weight-light title mb-2" 
+                :href="item.appUrl"
+              >
+                {{ item.appUrl }}
+              </a>
+            </v-card-text>
+          </v-card>
+        </v-hover>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
