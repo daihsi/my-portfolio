@@ -29,23 +29,24 @@ ${data.email}
 内容：
 ${data.content}
 `;
-}
+};
 
-exports.sendMail = functions.https.onCall(async (data, context) => {
-  //メール設定
+exports.sendMail = functions
+  .https
+  .onCall(async (data, context) => {
+  // メール設定
   let adminMail = {
     from: gmailEmail,
     to: adminEmail,
     subject: "ホームページお問い合わせ",
     text: adminContents(data)
-  }
+  };
 
-  //管理者へのメール送信
-  try {
-    await mailTransport.sendMail(adminMail);
-  } catch(e) {
-    console.error(`send failed.${e}`);
-    throw new functions.https.HttpsError("internal", "send failed");
-  }
+  // 管理者へのメール送信
+  mailTransport.sendMail(adminMail, (err, info) => {
+    if (err) {
+      return console.error(`send failed. ${err}`);
+    }
+    return console.log("send success.");
+  });
 });
-

@@ -77,7 +77,7 @@
             <v-btn
               :loading="contactForm.loading"
               :disabled="!contactFormValidation.valid"
-              @click="sendMail()"
+              @click="sendMail"
               block
               color="success"
             >
@@ -92,7 +92,7 @@
           :color="snackBar.color"
           bottom
           right
-          :timeout="5000"
+          :timeout="6000"
         >
           {{ snackBar.message }}
         </v-snackbar>
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { functions } from "@/plugins/firebase"
+import { functions } from "../plugins/firebase"
 
 export default {
   data: () => ({
@@ -149,41 +149,28 @@ export default {
     //送信ボタンを押したら、下記関数を実行
     sendMail: function () {
       if (this.$refs.form.validate()) {
-        this.contactForm.loading = true
-        const mailer = functions.httpsCallable("sendMail")
+        this.contactForm.loading = true;
+        const mailer = functions.httpsCallable("sendMail");
         mailer(this.contactForm)
-          .then(() => {
-            //フォームをリセット
-            this.formReset()
-            //成功した場合の表示カラーとメッセージ
-            this.showSnackBar(
-              "success",
-              "お問い合わせありがとうございます。送信完了しました。"
-            )
-          })
-          .catch(e => {
-            //失敗した場合の表示カラーとメッセージ
-            this.showSnackBar(
-              "error",
-              "送信に失敗しました。時間をおいて再度お試しください。"
-            )
-            console.log(e)
-          })
-          .finally(() => {
-            //成功失敗関わらずfalseに戻す
-            this.contactForm.loading = false
-          })
+        .then(() => {
+          this.formReset();
+          this.showSnackBar(
+            "success",
+            "お問い合わせありがとうございます。送信完了しました"
+          );
+          this.contactForm.loading = false;
+        });
       }
     },
     //問い合わせ後のメッセージ表示の関数
     showSnackBar: function (color, message) {
-      this.snackBar.message = message
-      this.snackBar.color = color
-      this.snackBar.show = true
+      this.snackBar.message = message;
+      this.snackBar.color = color;
+      this.snackBar.show = true;
     },
     //問い合わせ後のメッセージをリセットする関数
     formReset: function () {
-      this.$refs.form.reset()
+      this.$refs.form.reset();
     }
   }
 }
