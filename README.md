@@ -2,7 +2,7 @@
 ![ポートフォリオスクリーンショット](https://user-images.githubusercontent.com/65531136/100165379-7afdf780-2efd-11eb-9fc3-bb9e757fad43.png)
 <br>実務ではフロントエンド言語の知識も必要と考え、Vue.jsを学習しました。<br>
 アウトプットの一貫として転職活動と並行し、プロフィールサイトをSPAで作成しました。<br>
-firabaseでホスティングし、fucntionを利用したメール機能も実装しております。<br>
+firabaseでホスティングし、EmailJSを使用して、問い合わせメール機能を実装しています。<br>
 
 ## URL
 https://moda-portfolio.web.app/
